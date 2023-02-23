@@ -1,5 +1,6 @@
 import useToggle from "../hooks/useToggle";
 import Coin from "./Coin";
+import Spin from "./Spin";
 
 function DataTable({
   data,
@@ -63,11 +64,16 @@ function DataTable({
           </tr>
         </thead>
         <tbody className="space-y-10">
-          {data.coins.map((coin, index) => {
+          {data?.coins?.map((coin, index) => {
             return <Coin key={index} {...coin} volume24={coin["24hVolume"]} />;
           })}
         </tbody>
       </table>
+      {!data.coins && (
+        <div className="w-full flex  justify-center items-center my-20">
+          <Spin />
+        </div>
+      )}
     </div>
   );
 }

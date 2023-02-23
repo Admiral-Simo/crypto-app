@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 function Search({ data, setData }) {
   const FilterByInput = (e) => {
     const input = e.target.value;

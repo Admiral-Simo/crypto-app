@@ -1,6 +1,15 @@
+import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
 import useToggle from "../hooks/useToggle";
 import Coin from "./Coin";
 import Spin from "./Spin";
+
+function OrderUpDownArrow() {
+  return (
+    <div className="flex flex-col text-white items-center">
+      <IoMdArrowDropup className="-mb-2" /> <IoMdArrowDropdown />
+    </div>
+  );
+}
 
 function DataTable({
   data,
@@ -25,40 +34,40 @@ function DataTable({
   };
 
   return (
-    <div className="py-4 px-2 md:px-8 rounded-xl border border-slate-900 mt-10 max-w-4xl mx-auto">
+    <div className="py-4 px-2 md:px-8 rounded-xl border border-slate-900 mt-10 max-w-4xl mx-auto text-gray-200">
       <table className="w-full">
         <thead>
           <tr>
-            <th className="p-3 text-sm font-semibold tracking-wide text-left text-md text-gray-700">
+            <th className="p-3 text-sm font-semibold tracking-wide text-left text-md">
               <button
-                className="hover:bg-white hover:text-black transition duration-300 rounded-lg px-1 py-1"
+                className="hover:opacity-70 flex items-center justify-between hover:text-white transition duration-300  px-1 py-1"
                 onClick={() => handleClick("rank")}
               >
-                Rank
+                Rank <OrderUpDownArrow />
               </button>
             </th>
-            <th className="p-3 text-sm font-semibold tracking-wide text-left text-md text-gray-700">
+            <th className="p-3 text-sm font-semibold tracking-wide text-left text-md">
               <button
-                className="hover:bg-white hover:text-black transition duration-300 rounded-lg px-1 py-1"
+                className="flex items-center justify-between hover:opacity-70 over:text-white transition duration-300  px-1 py-1"
                 onClick={() => handleClick("name")}
               >
-                Name
+                Name <OrderUpDownArrow />
               </button>
             </th>
-            <th className="p-3 text-sm font-semibold tracking-wide text-left text-md text-gray-700">
+            <th className="p-3 text-sm font-semibold tracking-wide text-left text-md">
               <button
-                className="hover:bg-white hover:text-black transition duration-300 rounded-lg px-1 py-1"
+                className="flex items-center justify-between hover:opacity-70 hover:text-white transition duration-300  px-1 py-1"
                 onClick={() => handleClick("price")}
               >
-                Price
+                Price <OrderUpDownArrow />{" "}
               </button>
             </th>
-            <th className="p-3 text-sm font-semibold tracking-wide text-left text-md text-gray-700">
+            <th className="p-3 text-sm font-semibold tracking-wide text-left text-md">
               <button
-                className="hover:bg-white hover:text-black transition duration-300 rounded-lg px-1 py-1"
+                className="flex items-center justify-between hover:opacity-70 hover:text-white transition duration-300  px-1 py-1"
                 onClick={() => handleClick("change")}
               >
-                24h Change
+                24h Change <OrderUpDownArrow />
               </button>
             </th>
           </tr>

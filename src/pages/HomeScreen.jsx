@@ -5,7 +5,6 @@ import DataTable from "../components/DataTable";
 import useSort from "../hooks/useSort";
 import useFetch from "../hooks/useFetch";
 
-
 const HomeScreen = () => {
   const { activeData, constData, setActiveData } = useFetch();
 

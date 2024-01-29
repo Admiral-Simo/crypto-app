@@ -14,7 +14,7 @@ const HomeScreen = () => {
   console.log(activeData);
 
   return (
-    <div className="text-white bg-black px-5 py-16 md:py-28 font-poppins min-h-screen">
+    <div className="px-5 py-16 md:py-28 font-poppins min-h-screen">
       <HeaderText />
       <Search data={constData} setData={setActiveData} />
       <DataTable

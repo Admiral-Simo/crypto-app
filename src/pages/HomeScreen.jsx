@@ -11,8 +11,6 @@ const HomeScreen = () => {
   const { sortByRank, sortByPrice, sortByChange, sortByName } =
     useSort(activeData);
 
-  console.log(activeData);
-
   return (
     <div className="px-5 py-16 md:py-28 font-poppins min-h-screen">
       <HeaderText />

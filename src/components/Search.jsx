@@ -7,14 +7,10 @@ function Search({ data, setData }) {
     const result = tempData.coins.filter(
       (item) =>
         item.symbol.toLowerCase().includes(input.toLowerCase()) ||
-        item.name.toLowerCase().includes(input.toLowerCase())
+        item.name.toLowerCase().includes(input.toLowerCase()),
     );
-
-    console.log(result);
     setData({ ...tempData, coins: result });
   };
-
-  
 
   return (
     <form className="mt-3 md:mt-6 max-w-4xl mx-auto">

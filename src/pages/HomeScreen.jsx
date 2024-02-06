@@ -11,8 +11,16 @@ const HomeScreen = () => {
   const { sortByRank, sortByPrice, sortByChange, sortByName } =
     useSort(activeData);
 
+  function toggleDarkMode() {
+    const htmlElement = document.querySelector("html");
+    htmlElement.classList.toggle("dark");
+  }
+
   return (
     <div className="px-5 py-16 md:py-28 font-poppins min-h-screen">
+      <button className="dark:text-white text-black" onClick={toggleDarkMode}>
+        Toggle
+      </button>
       <HeaderText />
       <Search data={constData} setData={setActiveData} />
       <DataTable

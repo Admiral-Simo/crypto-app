@@ -1,9 +1,9 @@
-import React from "react";
 import HeaderText from "../components/HeaderText";
 import Search from "../components/Search";
 import DataTable from "../components/DataTable";
 import useSort from "../hooks/useSort";
 import useFetch from "../hooks/useFetch";
+import ToggleDarkMode from "../components/ToggleDarkMode";
 
 const HomeScreen = () => {
   const { activeData, constData, setActiveData } = useFetch();
@@ -11,17 +11,13 @@ const HomeScreen = () => {
   const { sortByRank, sortByPrice, sortByChange, sortByName } =
     useSort(activeData);
 
-  function toggleDarkMode() {
-    const htmlElement = document.querySelector("html");
-    htmlElement.classList.toggle("dark");
-  }
-
   return (
     <div className="px-5 py-16 md:py-28 font-poppins min-h-screen">
-      <button className="dark:text-white text-black" onClick={toggleDarkMode}>
-        Toggle
-      </button>
-      <HeaderText />
+      <div className="flex items-center justify-center">
+        <ToggleDarkMode />
+      </div>
+
+      <HeaderText className="mx-auto" />
       <Search data={constData} setData={setActiveData} />
       <DataTable
         data={activeData}

@@ -6,7 +6,7 @@ const Change24 = ({ change }) => {
   return (
     <div
       className={`rounded-lg py-0.5 px-1 bg-transparent flex flex-row items-center w-fit ${
-        isUp ? "bg-up-bg text-up-text" : "bg-down-bg text-down-text"
+        isUp ? "bg-transparent text-up-text" : "bg-transparent text-down-text"
       }`}
     >
       {isUp ? <IoMdArrowDropup /> : <IoMdArrowDropdown />}

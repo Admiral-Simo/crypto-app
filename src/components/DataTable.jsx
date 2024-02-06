@@ -5,7 +5,7 @@ import Spin from "./Spin";
 
 function OrderUpDownArrow() {
   return (
-    <div className="flex flex-col text-white items-center">
+    <div className="flex flex-col text-black dark:text-white items-center">
       <IoMdArrowDropup className="-mb-2" /> <IoMdArrowDropdown />
     </div>
   );
@@ -34,13 +34,13 @@ function DataTable({
   };
 
   return (
-    <div className="py-4 px-2 md:px-8 rounded-xl border border-slate-900 mt-10 max-w-4xl mx-auto text-gray-200">
+    <div className="py-4 px-2 md:px-8 rounded-xl border border-slate-900 mt-10 max-w-4xl mx-auto text-black dark:text-gray-200">
       <table className="w-full">
         <thead>
           <tr>
             <th className="p-3 text-sm font-semibold tracking-wide text-left text-md">
               <button
-                className="hover:opacity-70 flex items-center justify-between hover:text-white transition duration-300  px-1 py-1"
+                className="hover:opacity-70 flex items-center justify-between transition-opacity duration-300  px-1 py-1"
                 onClick={() => handleClick("rank")}
               >
                 Rank <OrderUpDownArrow />
@@ -48,7 +48,7 @@ function DataTable({
             </th>
             <th className="p-3 text-sm font-semibold tracking-wide text-left text-md">
               <button
-                className="flex items-center justify-between hover:opacity-70 over:text-white transition duration-300  px-1 py-1"
+                className="flex items-center justify-between hover:opacity-70 transition-opacity duration-300  px-1 py-1"
                 onClick={() => handleClick("name")}
               >
                 Name <OrderUpDownArrow />
@@ -56,7 +56,7 @@ function DataTable({
             </th>
             <th className="p-3 text-sm font-semibold tracking-wide text-left text-md">
               <button
-                className="flex items-center justify-between hover:opacity-70 hover:text-white transition duration-300  px-1 py-1"
+                className="flex items-center justify-between hover:opacity-70 transition-opacity duration-300  px-1 py-1"
                 onClick={() => handleClick("price")}
               >
                 Price <OrderUpDownArrow />{" "}
@@ -64,7 +64,7 @@ function DataTable({
             </th>
             <th className="p-3 text-sm font-semibold tracking-wide text-left text-md">
               <button
-                className="flex items-center justify-between hover:opacity-70 hover:text-white transition duration-300  px-1 py-1"
+                className="flex items-center justify-between hover:opacity-70 transition-opacity duration-300  px-1 py-1"
                 onClick={() => handleClick("change")}
               >
                 24h Change <OrderUpDownArrow />

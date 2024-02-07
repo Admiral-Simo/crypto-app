@@ -1,13 +1,25 @@
 import { FaMoon, FaSun } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function ToggleDarkMode() {
-  const [isDark, setIsDark] = useState(true);
-  function toggleDarkMode() {
-    setIsDark((prev) => !prev);
+  const [isDark, setIsDark] = useState(() => {
+    const storedDarkMode = localStorage.getItem("darkMode");
+    return storedDarkMode ? JSON.parse(storedDarkMode) : true;
+  });
+
+  useEffect(() => {
     const htmlElement = document.querySelector("html");
-    htmlElement.classList.toggle("dark");
-  }
+    if (isDark) {
+      htmlElement.classList.add("dark");
+    } else {
+      htmlElement.classList.remove("dark");
+    }
+    localStorage.setItem("darkMode", JSON.stringify(isDark));
+  }, [isDark]);
+
+  const toggleDarkMode = () => {
+    setIsDark((prev) => !prev);
+  };
 
   return (
     <div className="flex items-center gap-3">

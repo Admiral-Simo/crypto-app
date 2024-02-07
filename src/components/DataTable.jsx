@@ -5,7 +5,7 @@ import Spin from "./Spin";
 
 function OrderUpDownArrow() {
   return (
-    <div className="flex flex-col text-black dark:text-white items-center">
+    <div className="duration-300 transition-colors flex flex-col text-black dark:text-white items-center">
       <IoMdArrowDropup className="-mb-2" /> <IoMdArrowDropdown />
     </div>
   );
@@ -34,7 +34,7 @@ function DataTable({
   };
 
   return (
-    <div className="py-4 px-2 md:px-8 rounded-xl border border-slate-900 mt-10 max-w-4xl mx-auto text-black dark:text-gray-200">
+    <div className="duration-300 transition-colors py-4 px-2 md:px-8 rounded-xl border border-slate-900 mt-10 max-w-4xl mx-auto text-black dark:text-gray-200">
       <table className="w-full">
         <thead>
           <tr>

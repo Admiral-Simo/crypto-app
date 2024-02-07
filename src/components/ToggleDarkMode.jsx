@@ -12,12 +12,12 @@ function ToggleDarkMode() {
   return (
     <div className="flex items-center gap-3">
       <button
-        className="p-5 border border-black dark:border-white rounded-md text-black dark:text-white"
+        className="p-5 duration-500 transition-colors border border-black dark:border-white rounded-md text-black dark:text-white"
         onClick={toggleDarkMode}
       >
         {isDark ? <FaMoon /> : <FaSun />}
       </button>
-      <h1 className="font-black text-black dark:text-white">
+      <h1 className="duration-500 font-black text-black transition-colors dark:text-white">
         {isDark ? "Dark" : "White"} Mode
       </h1>
     </div>

@@ -73,8 +73,10 @@ function DataTable({
           </tr>
         </thead>
         <tbody className="space-y-10">
-          {data?.coins?.map((coin, index) => {
-            return <Coin key={index} {...coin} volume24={coin["24hVolume"]} />;
+          {data?.coins?.map((coin) => {
+            return (
+              <Coin key={coin.uuid} {...coin} volume24={coin["24hVolume"]} />
+            );
           })}
         </tbody>
       </table>

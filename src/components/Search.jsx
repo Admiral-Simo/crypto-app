@@ -1,9 +1,7 @@
 function Search({ data, setData }) {
   const FilterByInput = (e) => {
     const input = e.target.value;
-
     let tempData = data;
-
     const result = tempData.coins.filter(
       (item) =>
         item.symbol.toLowerCase().includes(input.toLowerCase()) ||
@@ -35,7 +33,6 @@ function Search({ data, setData }) {
         <input
           onChange={FilterByInput}
           type="search"
-          id="default-search"
           className="duration-300 transition-colors block w-full p-4 pl-10 text-sm focus:outline-none border border-gray-300 rounded-lg bg-black dark:bg-zinc-800 dark:border-gray-600 placeholder-white dark:placeholder-gray-400 text-white focus:ring-blue-500 focus:border-blue-500"
           placeholder="Search..."
           required

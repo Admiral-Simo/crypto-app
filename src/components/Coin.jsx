@@ -1,9 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Change24 from "./Change24";
 import DisplayPrice from "./DisplayPrice";
 
-const Coin = ({ iconUrl, name, rank, symbol, change, price }) => {
-  const changeRoute = () => {};
+const Coin = ({ uuid, iconUrl, name, rank, symbol, change, price }) => {
+  const navigate = useNavigate();
+  const changeRoute = () => {
+    navigate(`/currency/${uuid}`);
+  };
   return (
     <tr
       onClick={changeRoute}

@@ -3,6 +3,7 @@ import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./error-page";
 import "./index.css";
+import CurrencyScreen from "./pages/CurrencyScreen";
 import HomeScreen from "./pages/HomeScreen";
 
 const router = createBrowserRouter([
@@ -12,8 +13,8 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
-    path: "/currency",
-    element: <div>something right here the currency page</div>,
+    path: "/currency/:uuid",
+    element: <CurrencyScreen />,
   },
 ]);
 

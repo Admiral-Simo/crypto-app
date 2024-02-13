@@ -22,7 +22,6 @@ const options = {
 const useFetch = () => {
   const [activeData, setActiveData] = useState([]);
   const [constData, setConstData] = useState([]);
-
   const fetchData = async () => {
     const {
       data: { data },
@@ -30,11 +29,9 @@ const useFetch = () => {
     setConstData(data);
     setActiveData(data);
   };
-
   useEffect(() => {
     fetchData();
   }, []);
-
   return { activeData, constData, setConstData, setActiveData };
 };
 

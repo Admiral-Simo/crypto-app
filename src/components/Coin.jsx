@@ -2,21 +2,14 @@ import React from "react";
 import Change24 from "./Change24";
 import DisplayPrice from "./DisplayPrice";
 
-const Coin = ({
-  iconUrl,
-  name,
-  rank,
-  symbol,
-  change,
-  price,
-  btcPrice,
-  marketCap,
-  volume24,
-}) => {
+const Coin = ({ iconUrl, name, rank, symbol, change, price }) => {
+  const changeRoute = () => {};
   return (
-    <tr className="border-y-8 border-transparent">
+    <tr
+      onClick={changeRoute}
+      className="border-y-8 border-transparent transition-all duration-500 hover:opacity-70 hover:scale-105 cursor-pointer"
+    >
       <td className="text-xl">{rank}</td>
-
       <td className="flex flex-row items-center space-x-2">
         <img src={iconUrl} alt={name} className="w-10 h-10 md:w-12 md:h-12" />
         <p className="font-bold hidden md:block">{name}</p>

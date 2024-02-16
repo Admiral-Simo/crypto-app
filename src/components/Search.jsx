@@ -11,7 +11,7 @@ function Search({ data, setData }) {
   };
 
   return (
-    <form className="mt-3 md:mt-6 max-w-4xl mx-auto">
+    <form className="mt-3 md:mt-6 max-w-screen-lg mx-auto">
       <div class="relative">
         <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg

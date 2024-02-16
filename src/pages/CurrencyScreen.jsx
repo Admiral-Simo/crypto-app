@@ -5,6 +5,7 @@ import Change24 from "../components/Change24";
 import useFetch from "../hooks/useFetch";
 import { Sparklines, SparklinesLine } from "react-sparklines";
 import { numberWithCommas } from "../utils/numberUtils";
+import ToggleDarkMode from "../components/ToggleDarkMode";
 
 function SparklineChart({ data }) {
   return (
@@ -32,6 +33,10 @@ function CurrencyScreen() {
         </div>
       ) : (
         <>
+          <div className="flex items-center justify-center">
+            <ToggleDarkMode />
+          </div>
+
           <div className="flex items-center gap-3">
             <img
               className="w-8 md:w-16"

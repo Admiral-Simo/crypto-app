@@ -12,7 +12,7 @@ const HomeScreen = () => {
     useSort(activeData);
 
   return (
-    <div className="px-5 py-16 md:py-28 font-poppins min-h-screen">
+    <div className="pt-8 px-5 pb-4 font-poppins min-h-screen">
       <div className="flex items-center justify-center">
         <ToggleDarkMode />
       </div>

@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useParams } from "react-router-dom";
 import Spin from "../components/Spin";
 import Change24 from "../components/Change24";
@@ -36,13 +36,14 @@ function CurrencyScreen() {
           <div className="flex items-center justify-center">
             <ToggleDarkMode />
           </div>
-          <div className="flex items-center gap-3">
+
+          <div className="flex items-center gap-3 text-black dark:text-white">
             <img
               className="w-8 md:w-16"
               src={currentCurrency?.iconUrl}
               alt="coin"
             />
-            <h1 className="font-bold md:text-3xl text-black dark:text-white">
+            <h1 className="font-bold md:text-3xl">
               {currentCurrency?.name}
               <span className="ml-0.5 font-light">
                 {currentCurrency?.symbol}
@@ -51,34 +52,36 @@ function CurrencyScreen() {
           </div>
           <div className="flex justify-between items-center gap-3 w-full">
             {Number(currentCurrency?.price) >= 2 ? (
-              <p className="font-bold text-3xl">
+              <p className="font-bold text-3xl text-black dark:text-white">
                 ${numberWithCommas(Number(currentCurrency?.price).toFixed(2))}
               </p>
             ) : (
-              <p className="font-bold text-3xl">
+              <p className="font-bold text-3xl text-black dark:text-white">
                 ${Number(currentCurrency?.price).toFixed(6)}
               </p>
             )}
             <Change24 change={currentCurrency?.change} />
           </div>
           <div className="flex items-center gap-3 w-full">
-            <h1 className="text-2xl font-bold flex items-center justify-between w-full capitalize">
+            <h1 className="text-2xl font-bold flex items-center justify-between w-full capitalize text-black dark:text-white">
               marketcap:
-              <span className="text-green-300">
+              <span className="text-green-700 dark:text-green-300">
                 ${numberWithCommas(currentCurrency?.marketCap)}
               </span>
             </h1>
           </div>
           <div className="flex items-center gap-3 w-full">
-            <h1 className="text-2xl font-bold flex items-center justify-between w-full capitalize">
+            <h1 className="text-2xl font-bold flex items-center justify-between w-full capitalize text-black dark:text-white">
               24 hours volume:{" "}
-              <span className="text-green-300">
+              <span className="text-green-700 dark:text-green-300">
                 ${numberWithCommas(currentCurrency["24hVolume"])}
               </span>
             </h1>
           </div>
 
-          <h1 className="text-2xl font-bold capitalize">Contract Address: </h1>
+          <h1 className="text-2xl font-bold capitalize text-black dark:text-white">
+            Contract Address:{" "}
+          </h1>
           <div className="flex items-center gap-3 flex-wrap">
             {currentCurrency?.contractAddresses.length ? (
               currentCurrency?.contractAddresses.map((item) => (
@@ -92,7 +95,9 @@ function CurrencyScreen() {
               </div>
             )}
           </div>
-          <h1 className="text-2xl font-bold capitalize">Chart: </h1>
+          <h1 className="text-2xl font-bold capitalize text-black dark:text-white">
+            Chart:{" "}
+          </h1>
           <SparklineChart data={currentCurrency?.sparkline} />
         </>
       )}

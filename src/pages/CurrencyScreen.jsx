@@ -9,7 +9,7 @@ import ToggleDarkMode from "../components/ToggleDarkMode";
 
 function SparklineChart({ data }) {
   return (
-    <Sparklines data={data} width={100} height={35} margin={5}>
+    <Sparklines data={data} width={100} height={35}>
       <SparklinesLine color="#1c8cdc" />
     </Sparklines>
   );
@@ -24,7 +24,7 @@ function CurrencyScreen() {
     if (!uuid || !Array.isArray(constData?.coins)) return null;
     return constData?.coins.find((item) => item.uuid === uuid);
   }, [uuid, constData]);
-
+  console.log(currentCurrency);
   if (!currentCurrency) {
     return (
       <div className="w-full h-screen flex justify-center items-center">
@@ -93,7 +93,7 @@ function CurrencyScreen() {
       <h1 className="text-2xl font-bold capitalize text-black dark:text-white">
         Chart:{" "}
       </h1>
-      <SparklineChart data={currentCurrency?.sparkline} />
+      <SparklineChart data={currentCurrency?.sparkline.slice(0, -1)} />
     </div>
   );
 }

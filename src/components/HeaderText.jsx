@@ -8,7 +8,6 @@ function HeaderText() {
         With Us, you can see all coins information you need to make better
         decisions that win you more money
       </p>
-      <p className="animate-bounce mx-auto w-fit mt-3 text-3xl">👇</p>
     </div>
   );
 }
